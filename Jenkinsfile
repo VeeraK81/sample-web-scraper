@@ -9,21 +9,21 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('simple-scraper:latest')
+                    docker.build('simple-scraper-veera:latest')
                 }
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('simple-scraper:latest')
+                    docker.build('simple-scraper-veera:latest')
                 }
             }
         }
         stage('Run Tests') {
             steps {
                 script {
-                    docker.image('simple-scraper:latest').inside {
+                    docker.image('simple-scraper-veera:latest').inside {
                         sh 'pytest tests/tests.py --junitxml=results.xml'
                     }
                 }
