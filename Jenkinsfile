@@ -13,13 +13,6 @@ pipeline {
                 }
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    docker.build('simple-scraper-veera:latest')
-                }
-            }
-        }
         stage('Run Tests') {
             steps {
                 script {
